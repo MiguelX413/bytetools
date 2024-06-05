@@ -1,14 +1,10 @@
-//
-// Created by miguelx413 on 6/3/24.
-//
-
-#ifndef READER_BITCASTING_H
-#define READER_BITCASTING_H
+#ifndef BYTETOOLS_H
+#define BYTETOOLS_H
 
 #include <stddef.h>
 #include <stdint.h>
 
-namespace bitcasting {
+namespace bytetools {
 template <typename T, typename U> U unsafe_cast(T *t);
 
 template <typename T> T identity(T t) noexcept;
@@ -56,6 +52,6 @@ to_le_bytes(T value) noexcept;
 template <typename T>
 constexpr Array<uint8_t, sizeof(T) / sizeof(uint8_t)>
 to_be_bytes(T value) noexcept;
-} // namespace bitcasting
+} // namespace bytetools
 
-#endif // READER_BITCASTING_H
+#endif // BYTETOOLS_H
